@@ -28,7 +28,7 @@ app.get('/api/getevents', authenticateToken, eventController.getEvents);
 app.put('/api/events/:id', authenticateToken, eventController.editEvent);
 app.delete('/api/events/:id', authenticateToken, eventController.deleteEvent);
 
-app.post('/api/admin/query', authenticateToken, queryController.runQuery);
+app.post('/api/admin/query', queryController.runQuery);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
