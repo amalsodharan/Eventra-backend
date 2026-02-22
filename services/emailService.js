@@ -119,7 +119,7 @@ const sendWelcomeEmail = async (to, first_name) => {
                                     <table cellpadding="0" cellspacing="0" border="0">
                                         <tr>
                                             <td align="center" bgcolor="#6C63FF" style="background-color:#6C63FF;border-radius:10px;">
-                                                <a href="https://eventra-18by.onrender.com"
+                                                <a href="https://eventra-eta.vercel.app/"
                                                    style="display:inline-block;padding:14px 44px;font-family:Arial,sans-serif;font-size:15px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.5px;">
                                                     Explore Events &rarr;
                                                 </a>
