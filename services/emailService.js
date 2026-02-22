@@ -16,110 +16,141 @@ const sendWelcomeEmail = async (to, first_name) => {
         to,
         subject: 'Welcome to Eventra 🎉',
         html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        </head>
-        <body style="margin:0;padding:0;background-color:#1A1A2E;font-family:'Segoe UI',Arial,sans-serif;">
-            <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#1A1A2E;padding:40px 0;">
-                <tr>
-                    <td align="center">
-                        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Eventra</title>
+</head>
+<body style="margin:0;padding:0;background-color:#1A1A2E;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1A1A2E;">
+    <tr>
+        <td align="center" style="padding:40px 16px;">
 
-                            <!-- Header -->
+            <!-- Outer card -->
+            <table width="560" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;border-radius:16px;overflow:hidden;">
+
+                <!-- ===== HEADER ===== -->
+                <tr>
+                    <td align="center" bgcolor="#6C63FF" style="background-color:#6C63FF;padding:40px 40px 32px;">
+
+                        <!-- Trophy circle -->
+                        <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto 16px;">
                             <tr>
-                                <td style="background:linear-gradient(135deg,#6C63FF 0%,#5548C8 100%);border-radius:16px 16px 0 0;padding:40px;text-align:center;">
-                                    <div style="width:70px;height:70px;background:rgba(255,255,255,0.2);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.3);">
-                                        <span style="font-size:36px;">🏆</span>
-                                    </div>
-                                    <h1 style="color:#ffffff;margin:0;font-size:32px;font-weight:800;letter-spacing:2px;">EVENTRA</h1>
-                                    <p style="color:rgba(255,255,255,0.8);margin:6px 0 0;font-size:13px;letter-spacing:3px;text-transform:uppercase;">Play. Host. Discover.</p>
+                                <td align="center" width="72" height="72"
+                                    style="width:72px;height:72px;border-radius:50%;background-color:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.35);font-size:36px;line-height:72px;text-align:center;">
+                                    &#127942;
                                 </td>
                             </tr>
+                        </table>
 
-                            <!-- Body -->
+                        <p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:3px;text-align:center;">EVENTRA</p>
+                        <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:rgba(255,255,255,0.8);letter-spacing:4px;text-transform:uppercase;text-align:center;">Play. Host. Discover.</p>
+                    </td>
+                </tr>
+
+                <!-- ===== BODY ===== -->
+                <tr>
+                    <td bgcolor="#0F0E17" style="background-color:#0F0E17;padding:36px 40px 32px;border-left:1px solid #2a2a3e;border-right:1px solid #2a2a3e;">
+
+                        <p style="margin:0 0 10px;font-family:Arial,sans-serif;font-size:22px;font-weight:700;color:#FFFFFE;">
+                            Welcome aboard, ${first_name}! &#128075;
+                        </p>
+                        <p style="margin:0 0 28px;font-family:Arial,sans-serif;font-size:15px;line-height:1.8;color:#A7A9BE;">
+                            Your account has been created successfully. You're now part of the Eventra community — where athletes, organizers, and sports lovers come together.
+                        </p>
+
+                        <!-- Feature 1 -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
                             <tr>
-                                <td style="background-color:#0F0E17;padding:40px;border-left:1px solid rgba(108,99,255,0.2);border-right:1px solid rgba(108,99,255,0.2);">
-                                    <h2 style="color:#FFFFFE;font-size:24px;font-weight:700;margin:0 0 12px;">
-                                        Welcome aboard, ${first_name}! 👋
-                                    </h2>
-                                    <p style="color:#A7A9BE;font-size:15px;line-height:1.8;margin:0 0 28px;">
-                                        Your account has been created successfully. You're now part of the Eventra community — where athletes, organizers, and sports lovers come together.
-                                    </p>
-
-                                    <!-- Feature cards -->
-                                    <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+                                <td style="background-color:#1e1d2e;border:1px solid #3a3660;border-radius:10px;padding:14px 18px;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                         <tr>
-                                            <td style="padding:4px;">
-                                                <div style="background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.25);border-radius:12px;padding:16px 20px;display:flex;align-items:center;">
-                                                    <span style="font-size:22px;margin-right:14px;">🗺️</span>
-                                                    <div>
-                                                        <p style="color:#FFFFFE;font-weight:700;margin:0 0 2px;font-size:14px;">Discover Events</p>
-                                                        <p style="color:#A7A9BE;margin:0;font-size:13px;">Find sports events near you on the live map</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr><td style="height:8px;"></td></tr>
-                                        <tr>
-                                            <td style="padding:4px;">
-                                                <div style="background:rgba(255,101,132,0.08);border:1px solid rgba(255,101,132,0.2);border-radius:12px;padding:16px 20px;">
-                                                    <span style="font-size:22px;margin-right:14px;">🏅</span>
-                                                    <div style="display:inline-block;vertical-align:top;">
-                                                        <p style="color:#FFFFFE;font-weight:700;margin:0 0 2px;font-size:14px;">Host Events</p>
-                                                        <p style="color:#A7A9BE;margin:0;font-size:13px;">Create and manage your own sports events</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr><td style="height:8px;"></td></tr>
-                                        <tr>
-                                            <td style="padding:4px;">
-                                                <div style="background:rgba(22,244,208,0.06);border:1px solid rgba(22,244,208,0.2);border-radius:12px;padding:16px 20px;">
-                                                    <span style="font-size:22px;margin-right:14px;">👥</span>
-                                                    <div style="display:inline-block;vertical-align:top;">
-                                                        <p style="color:#FFFFFE;font-weight:700;margin:0 0 2px;font-size:14px;">Connect</p>
-                                                        <p style="color:#A7A9BE;margin:0;font-size:13px;">Meet athletes and organizers in your area</p>
-                                                    </div>
-                                                </div>
+                                            <td width="36" valign="middle" style="font-size:22px;padding-right:14px;">&#128506;</td>
+                                            <td valign="middle">
+                                                <p style="margin:0 0 2px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#FFFFFE;">Discover Events</p>
+                                                <p style="margin:0;font-family:Arial,sans-serif;font-size:13px;color:#A7A9BE;">Find sports events near you on the live map</p>
                                             </td>
                                         </tr>
                                     </table>
+                                </td>
+                            </tr>
+                        </table>
 
-                                    <!-- CTA Button -->
-                                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <!-- Feature 2 -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:10px;">
+                            <tr>
+                                <td style="background-color:#1e1d2e;border:1px solid #3d2a35;border-radius:10px;padding:14px 18px;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                         <tr>
-                                            <td align="center">
+                                            <td width="36" valign="middle" style="font-size:22px;padding-right:14px;">&#127941;</td>
+                                            <td valign="middle">
+                                                <p style="margin:0 0 2px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#FFFFFE;">Host Events</p>
+                                                <p style="margin:0;font-family:Arial,sans-serif;font-size:13px;color:#A7A9BE;">Create and manage your own sports events</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Feature 3 -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
+                            <tr>
+                                <td style="background-color:#1e1d2e;border:1px solid #1e3535;border-radius:10px;padding:14px 18px;">
+                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                        <tr>
+                                            <td width="36" valign="middle" style="font-size:22px;padding-right:14px;">&#128101;</td>
+                                            <td valign="middle">
+                                                <p style="margin:0 0 2px;font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:#FFFFFE;">Connect</p>
+                                                <p style="margin:0;font-family:Arial,sans-serif;font-size:13px;color:#A7A9BE;">Meet athletes and organizers in your area</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- CTA Button -->
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td align="center">
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td align="center" bgcolor="#6C63FF" style="background-color:#6C63FF;border-radius:10px;">
                                                 <a href="https://eventra-18by.onrender.com"
-                                                   style="display:inline-block;background:linear-gradient(135deg,#6C63FF 0%,#5548C8 100%);color:#ffffff;text-decoration:none;padding:14px 40px;border-radius:10px;font-weight:700;font-size:15px;letter-spacing:0.5px;box-shadow:0 6px 20px rgba(108,99,255,0.4);">
-                                                    Explore Events →
+                                                   style="display:inline-block;padding:14px 44px;font-family:Arial,sans-serif;font-size:15px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.5px;">
+                                                    Explore Events &rarr;
                                                 </a>
                                             </td>
                                         </tr>
                                     </table>
                                 </td>
                             </tr>
-
-                            <!-- Footer -->
-                            <tr>
-                                <td style="background-color:#0A0914;border-radius:0 0 16px 16px;padding:24px 40px;text-align:center;border:1px solid rgba(108,99,255,0.15);border-top:1px solid rgba(108,99,255,0.2);">
-                                    <p style="color:#6b7280;font-size:12px;margin:0 0 6px;">
-                                        You received this email because you created an account on Eventra.
-                                    </p>
-                                    <p style="color:#6b7280;font-size:12px;margin:0;">
-                                        © ${new Date().getFullYear()} Eventra. All rights reserved.
-                                    </p>
-                                </td>
-                            </tr>
-
                         </table>
+
                     </td>
                 </tr>
+
+                <!-- ===== FOOTER ===== -->
+                <tr>
+                    <td align="center" bgcolor="#0A0914" style="background-color:#0A0914;padding:22px 40px;border:1px solid #2a2a3e;border-top:1px solid #2a2a3e;border-radius:0 0 16px 16px;">
+                        <p style="margin:0 0 4px;font-family:Arial,sans-serif;font-size:12px;color:#6b7280;text-align:center;">
+                            You received this email because you created an account on Eventra.
+                        </p>
+                        <p style="margin:0;font-family:Arial,sans-serif;font-size:12px;color:#6b7280;text-align:center;">
+                            &copy; ${new Date().getFullYear()} Eventra. All rights reserved.
+                        </p>
+                    </td>
+                </tr>
+
             </table>
-        </body>
-        </html>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
         `,
     };
 
