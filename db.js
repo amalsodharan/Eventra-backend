@@ -1,6 +1,7 @@
 import { Sequelize, Op } from 'sequelize';
 import dotenv from 'dotenv';
-import UserModel from './modules/eventModel.js';
+import eventModel from './modules/eventModel.js';
+import userModel from './modules/userModule.js';
 
 dotenv.config();
 
@@ -17,9 +18,10 @@ const sequelize = new Sequelize(
   }
 );
 
-const Event = UserModel(sequelize, Sequelize);
+const Event = eventModel(sequelize, Sequelize);
+const User = userModel(sequelize, Sequelize);
 
-const Models = { Event, Op };
+const Models = { Event, User, Op };
 
 const connection = {};
 

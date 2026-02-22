@@ -1,59 +1,38 @@
 export default (sequelize, Sequelize) => {
-  return sequelize.define('Event', {
+  return sequelize.define('User_v2', {
     id: {
       type: Sequelize.UUID,
       defaultValue: Sequelize.UUIDV4,
       primaryKey: true,
     },
-    role: {
-      type: Sequelize.STRING,
-      allowNull: false,
-      validate: {
-        isIn: [['admin', 'user']],
-      },
-    },
-    event_name: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    desc: {
+    email: {
       type: Sequelize.STRING,
       allowNull: false,
       unique: true,
     },
-    location: {
+    password: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    landmark_name: {
+    first_name: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    user_name: {
+    last_name: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    email: {
-      type: Sequelize.STRING,
+    phone: {
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
-    start_date: {
+    role: {
       type: Sequelize.STRING,
       allowNull: false,
-    },
-    end_date: {
-      type: Sequelize.STRING,
-      allowNull: false,
-      defaultValue: '0000-00-00',
-    },
-    user_id: {
-      type: Sequelize.UUID,
-      allowNull: false
     },
     is_deleted: {
       type: Sequelize.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
     },
   });
 };
